@@ -44,8 +44,6 @@ jobs:
 
       - name: Build and Push Docker image
         uses: docker/build-push-action@v6
-        env:
-          TAG: teste
         with:
           push: true
-          tags: ${{ vars.DOCKERHUB_USERNAME }}/${{ vars.DOCKERHUB_USERNAME }}:$TAG, ${{ vars.DOCKERHUB_USERNAME }}/${{ vars.DOCKERHUB_USERNAME }}:latest
+          tags: ${{ vars.DOCKERHUB_USERNAME }}/${{ vars.DOCKERHUB_USERNAME }}:teste, ${{ vars.DOCKERHUB_USERNAME }}/${{ vars.DOCKERHUB_USERNAME }}:latest
