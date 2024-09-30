@@ -3,6 +3,9 @@ FROM node:20.12.2-alpine AS appbuild
 WORKDIR /home/app
 
 COPY . .
+COPY node_modules ./node_modules
+COPY build ./build
+
 
 FROM node:20.12.2-alpine
 
