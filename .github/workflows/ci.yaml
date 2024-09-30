@@ -23,12 +23,6 @@ jobs:
       - name: Build Application
         run: yarn build
 
-      - name: Check dist
-        run: ls -la
-
-      - name: Check path
-        run: pwd
-
       # - name: Semantic Release
       #   uses: cycjimmy/semantic-release-action@v4
       #   env:
