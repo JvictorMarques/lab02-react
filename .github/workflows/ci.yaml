@@ -34,10 +34,6 @@ jobs:
     needs: [ build ]
     runs-on: ubuntu-latest
 
-    env:
-      TAG: ${{ needs.build.outputs.new_release_version }}
-      USERNAME: ${{ vars.DOCKERHUB_USERNAME }}
-      REPOSITORY: ${{ vars.DOCKERHUB_USERNAME }}
     steps:
       - uses: actions/checkout@v4
 
@@ -52,5 +48,5 @@ jobs:
         with:
           push: true
           tags: |
-            ${{ env.USERNAME }}/${{ env.REPOSITORY }}:${{ env.TAG }}
-            ${{ env.USERNAME }}/${{ env.REPOSITORY }}:latest
+            ${{ vars.DOCKERHUB_USERNAME }}/${{ vars.DOCKERHUB_USERNAME }}:${{ needs.build.outputs.new_release_version }}
+            ${{ vars.DOCKERHUB_USERNAME }}/${{ vars.DOCKERHUB_USERNAME }}:latest
