@@ -1,3 +1,10 @@
+## [1.2.4](https://github.com/JvictorMarques/lab02-react/compare/v1.2.3...v1.2.4) (2024-10-01)
+
+
+### Bug Fixes
+
+* **devops:** :green_heart: fix the ci version to be the new one ([51b4053](https://github.com/JvictorMarques/lab02-react/commit/51b4053ee402aa482dfd076a182b16d2dac67396))
+
 ## [1.2.3](https://github.com/JvictorMarques/lab02-react/compare/v1.2.2...v1.2.3) (2024-10-01)
 
 
