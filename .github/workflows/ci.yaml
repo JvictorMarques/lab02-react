@@ -35,7 +35,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      TAG: 
+      TAG: ${{ needs.build.outputs.new_release_version }}
     steps:
       - uses: actions/checkout@v4
 
