@@ -15,6 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       NEW_VERSION: ${{ steps.semantic_release.outputs.new_release_version }}
+      TAG: ${{ steps.generate_tag.outputs.sha }}
     steps:
       - uses: actions/checkout@v4
 
@@ -30,14 +31,18 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
-      - run: |
-          echo "${{ steps.semantic_release.outputs.new_release_version }}"
+      - name: Generate TAG
+        id: generate_tag
+        run: |
+          SHA=$(echo $GITHUB_SHA | head -c7)
+          echo "sha=$SHA" >> $GITHUB_OUTPUT
 
   release:
     needs: build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      
 
       - run: |
           echo "${{ needs.build.outputs.NEW_VERSION }}"
@@ -54,4 +59,4 @@ jobs:
           push: true
           tags: |
             jvictorsm/jvictorsm:${{ needs.build.outputs.NEW_VERSION }} 
-            jvictorsm/jvictorsm:latest
+            jvictorsm/jvictorsm:${{ github.sha.substr(0, 7) }}
