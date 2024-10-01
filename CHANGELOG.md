@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/JvictorMarques/lab02-react/compare/v1.0.0...v1.1.0) (2024-10-01)
+
+
+### Features
+
+* Automate Docker image tagging and pushing ([4f51777](https://github.com/JvictorMarques/lab02-react/commit/4f51777b9644b2c2bf6a87962bd25904ad32c808))
+
 # 1.0.0 (2024-10-01)
 
 
