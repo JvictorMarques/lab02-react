@@ -57,9 +57,8 @@ jobs:
         env:
           USERNAME: ${{ vars.DOCKERHUB_USERNAME }}
           REPOSITORY: ${{ vars.DOCKERHUB_USERNAME }}
-          TAG: ${{ needs.build.outputs.CURRENT_VERSION }}  # Certifique-se de que este valor é válido
         with:
           push: true
           tags: |
-            $USERNAME/$REPOSITORY:$TAG
+            $USERNAME/$REPOSITORY:${{ needs.build.outputs.CURRENT_VERSION }} 
             $USERNAME/$REPOSITORY:latest
