@@ -59,4 +59,4 @@ jobs:
           push: true
           tags: |
             jvictorsm/jvictorsm:${{ needs.build.outputs.NEW_VERSION }} 
-            jvictorsm/jvictorsm:${{ github.sha.substr(0, 7) }}
+            jvictorsm/jvictorsm:${{ needs.build.outputs.TAG }} 
