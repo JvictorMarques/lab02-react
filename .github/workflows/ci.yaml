@@ -14,7 +14,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     outputs:
-      new_release_version: ${{ steps.version.outputs.new_release_version }}
+      new_release_version: ${{ steps.semantic_release.outputs.new_release_version }}  # output da versão
     steps:
       - uses: actions/checkout@v4
 
@@ -25,7 +25,7 @@ jobs:
           cache: yarn
 
       - name: Semantic Release
-        id: version
+        id: semantic_release
         uses: cycjimmy/semantic-release-action@v4
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
@@ -33,7 +33,6 @@ jobs:
   release:
     needs: [ build ]
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v4
 
@@ -45,8 +44,12 @@ jobs:
 
       - name: Build and Push Docker image
         uses: docker/build-push-action@v6
+        env:
+          USERNAME: ${{ vars.DOCKERHUB_USERNAME }}
+          REPOSITORY: ${{ vars.DOCKERHUB_USERNAME }}
+          TAG: ${{ needs.build.outputs.new_release_version }}  # acessa a versão do build
         with:
           push: true
           tags: |
-            ${{ vars.DOCKERHUB_USERNAME }}/${{ vars.DOCKERHUB_USERNAME }}:${{ needs.build.outputs.new_release_version }}
-            ${{ vars.DOCKERHUB_USERNAME }}/${{ vars.DOCKERHUB_USERNAME }}:latest
+            $USERNAME/$REPOSITORY:$TAG
+            $USERNAME/$REPOSITORY:latest
