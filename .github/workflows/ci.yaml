@@ -13,6 +13,8 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    outputs:
+      new_release_version: ${{ steps.version.outputs.new_release_version }}
     steps:
       - uses: actions/checkout@v4
 
@@ -31,6 +33,7 @@ jobs:
   release:
     needs: [ build ]
     runs-on: ubuntu-latest
+
     env:
       TAG: 
     steps:
@@ -44,6 +47,12 @@ jobs:
 
       - name: Build and Push Docker image
         uses: docker/build-push-action@v6
+        env:
+          USERNAME: ${{ vars.DOCKERHUB_USERNAME }}
+          REPOSITORY: ${{ vars.DOCKERHUB_USERNAME }}
+          TAG: ${{ needs.build.outputs.new_release_version }}
         with:
           push: true
-          tags: ${{ vars.DOCKERHUB_USERNAME }}/${{ vars.DOCKERHUB_USERNAME }}:teste, ${{ vars.DOCKERHUB_USERNAME }}/${{ vars.DOCKERHUB_USERNAME }}:latest
+          tags: |
+            $USERNAME/$REPOSITORY:$TAG
+            $USERNAME/$REPOSITORY:latest
