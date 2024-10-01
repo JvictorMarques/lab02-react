@@ -11,9 +11,6 @@ COPY . .
 RUN yarn build
 FROM node:20.12.2-alpine
 
-RUN addgroup -S user && adduser -S user -G user
-USER user
-
 WORKDIR /home/app
 
 COPY --from=appbuild /home/app/package.json ./package.json
