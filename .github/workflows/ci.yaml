@@ -35,7 +35,7 @@ jobs:
           echo "New release version is: ${{ steps.semantic_release.outputs.new_release_version }}"
 
   release:
-    needs: [ build ]
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -55,7 +55,7 @@ jobs:
         env:
           USERNAME: ${{ vars.DOCKERHUB_USERNAME }}
           REPOSITORY: ${{ vars.DOCKERHUB_USERNAME }}
-          TAG: ${{ needs.build.outputs.VERSION }}
+          TAG: ${{ needs.build.outputs.VERSION }}  # Certifique-se de que este valor é válido
         with:
           push: true
           tags: |
