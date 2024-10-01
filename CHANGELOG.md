@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/JvictorMarques/lab02-react/compare/v1.2.0...v1.2.1) (2024-10-01)
+
+
+### Bug Fixes
+
+* fix syntax error for importing ([cf60e13](https://github.com/JvictorMarques/lab02-react/commit/cf60e139e76e7e8865dd630f08f712c9ec98cef1))
+
 # [1.2.0](https://github.com/JvictorMarques/lab02-react/compare/v1.1.0...v1.2.0) (2024-10-01)
 
 
