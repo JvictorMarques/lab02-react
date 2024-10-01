@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/JvictorMarques/lab02-react/compare/v1.1.0...v1.2.0) (2024-10-01)
+
+
+### Features
+
+* Add release version printing ([125245e](https://github.com/JvictorMarques/lab02-react/commit/125245e99f4b770f6362d957bb51c897673ffcb2))
+
 # [1.1.0](https://github.com/JvictorMarques/lab02-react/compare/v1.0.0...v1.1.0) (2024-10-01)
 
 
