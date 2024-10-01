@@ -14,8 +14,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     outputs:
-      IS_RELEASE_PUBLISHED: ${{ steps.semantic_release.outputs.new_release_published }}
-      CURRENT_VERSION: ${{ steps.semantic_release.outputs.last_release_version }}
       NEW_VERSION: ${{ steps.semantic_release.outputs.new_release_version }}
     steps:
       - uses: actions/checkout@v4
@@ -44,7 +42,7 @@ jobs:
 
       - name: Print Release Version
         run: |
-          echo "New release version is: ${{ needs.build.outputs.CURRENT_VERSION }}"
+          echo "New release version is: ${{ needs.build.outputs.NEW_VERSION }}"
 
       - name: Login Docker HUB
         uses: docker/login-action@v3
@@ -60,5 +58,5 @@ jobs:
         with:
           push: true
           tags: |
-            jvictorsm/jvictorsm:${{ needs.build.outputs.CURRENT_VERSION }} 
+            jvictorsm/jvictorsm:${{ needs.build.outputs.NEW_VERSION }} 
             jvictorsm/jvictorsm:latest
