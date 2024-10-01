@@ -1,3 +1,15 @@
+# [1.3.0](https://github.com/JvictorMarques/lab02-react/compare/v1.2.5...v1.3.0) (2024-10-01)
+
+
+### Bug Fixes
+
+* Use correct tag for container image ([8a2e158](https://github.com/JvictorMarques/lab02-react/commit/8a2e158138a6aa5379bd4df747b929c4512ce89c))
+
+
+### Features
+
+* Tag releases with short commit SHA ([12ef351](https://github.com/JvictorMarques/lab02-react/commit/12ef351c2609b629f9457a20123a03e1198ac00e))
+
 ## [1.2.5](https://github.com/JvictorMarques/lab02-react/compare/v1.2.4...v1.2.5) (2024-10-01)
 
 ## [1.2.4](https://github.com/JvictorMarques/lab02-react/compare/v1.2.3...v1.2.4) (2024-10-01)
