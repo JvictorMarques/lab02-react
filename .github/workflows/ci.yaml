@@ -36,23 +36,21 @@ jobs:
 
     env:
       TAG: ${{ needs.build.outputs.new_release_version }}
+      USERNAME: ${{ vars.DOCKERHUB_USERNAME }}
+      REPOSITORY: ${{ vars.DOCKERHUB_USERNAME }}
     steps:
       - uses: actions/checkout@v4
 
       - name: Login Docker HUB
         uses: docker/login-action@v3
         with:
-          username: ${{ vars.DOCKERHUB_USERNAME }}
+          username: ${{ env.USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build and Push Docker image
         uses: docker/build-push-action@v6
-        env:
-          USERNAME: ${{ vars.DOCKERHUB_USERNAME }}
-          REPOSITORY: ${{ vars.DOCKERHUB_USERNAME }}
-          TAG: ${{ needs.build.outputs.new_release_version }}
         with:
           push: true
           tags: |
-            $USERNAME/$REPOSITORY:$TAG
-            $USERNAME/$REPOSITORY:latest
+            ${{ env.USERNAME }}/${{ env.REPOSITORY }}:${{ env.TAG }}
+            ${{ env.USERNAME }}/${{ env.REPOSITORY }}:latest
