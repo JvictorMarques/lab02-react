@@ -30,11 +30,17 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
+      - run: |
+          echo "${{ steps.semantic_release.outputs.new_release_version }}"
+
   release:
     needs: build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      - run: |
+          echo "${{ needs.build.outputs.NEW_VERSION }}"
 
       - name: Login Docker HUB
         uses: docker/login-action@v3
