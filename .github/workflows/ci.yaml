@@ -30,6 +30,10 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
+      - name: Print Release Version
+        run: |
+          echo "New release version is: ${{ steps.semantic_release.outputs.new_release_version }}"
+
   release:
     needs: [ build ]
     runs-on: ubuntu-latest
