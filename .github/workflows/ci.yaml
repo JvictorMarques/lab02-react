@@ -62,3 +62,4 @@ jobs:
           tags: |
             $USERNAME/$REPOSITORY:${{ needs.build.outputs.CURRENT_VERSION }} 
             $USERNAME/$REPOSITORY:latest
+            
