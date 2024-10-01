@@ -1,3 +1,10 @@
+## [1.2.2](https://github.com/JvictorMarques/lab02-react/compare/v1.2.1...v1.2.2) (2024-10-01)
+
+
+### Bug Fixes
+
+* hotfix ([efc47eb](https://github.com/JvictorMarques/lab02-react/commit/efc47eb37d184c93fcda7e19ec6e95ab165d1d1f))
+
 ## [1.2.1](https://github.com/JvictorMarques/lab02-react/compare/v1.2.0...v1.2.1) (2024-10-01)
 
 
