@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/JvictorMarques/lab02-react/compare/v1.3.0...v1.3.1) (2024-10-02)
+
+
+### Bug Fixes
+
+* **task1923223:** :bug: implementei um espaço para testar ([d14b4e8](https://github.com/JvictorMarques/lab02-react/commit/d14b4e86fe07a83be7390d1c8e87babd38b222f5))
+
 # [1.3.0](https://github.com/JvictorMarques/lab02-react/compare/v1.2.5...v1.3.0) (2024-10-01)
 
 
