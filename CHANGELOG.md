@@ -1,3 +1,10 @@
+## [1.3.2](https://github.com/JvictorMarques/lab02-react/compare/v1.3.1...v1.3.2) (2024-10-06)
+
+
+### Bug Fixes
+
+* Bump dependency versions and optimize Docker build ([8d5187c](https://github.com/JvictorMarques/lab02-react/commit/8d5187c88f97efb06d53e9454679782d741eb29c))
+
 ## [1.3.1](https://github.com/JvictorMarques/lab02-react/compare/v1.3.0...v1.3.1) (2024-10-02)
 
 
