@@ -18,4 +18,6 @@ COPY --from=appbuild /home/app/yarn.lock ./yarn.lock
 COPY --from=appbuild /home/app/node_modules ./node_modules
 COPY --from=appbuild /home/app/build ./build
 
+
+
 CMD yarn start
